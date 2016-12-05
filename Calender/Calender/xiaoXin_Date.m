@@ -269,13 +269,21 @@
             {
                 Abtn.backgroundColor = [UIColor greenColor];
             }
-            else if (Abtn.tag == _mkx_firstDay+1)
+            else if (Abtn.tag >= _mkx_firstDay+1)
             {
                 if (_mkx_nowYear == _mkx_oldYear)
                 {
                     if (_mkx_nowMonth == _mkx_oldMonth)
                     {
-                        Abtn.backgroundColor = [UIColor purpleColor];
+                        if (Abtn.tag-_mkx_firstDay+1 == _mkx_oldDay)
+                        {
+                            Abtn.backgroundColor = [UIColor purpleColor];
+                        }
+                        else
+                        {
+                            Abtn.backgroundColor = [UIColor orangeColor];
+                        }
+                        
                     }
                     else
                     {
